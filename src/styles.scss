@@ -1,1 +1,111 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$streaming-calculator-primary: mat-palette($mat-blue, 200, 50, 400);
+$streaming-calculator-accent: mat-palette($mat-blue-grey);
+
+// The warn palette is optional (defaults to red).
+$streaming-calculator-warn: mat-palette($mat-red);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$streaming-calculator-theme: mat-light-theme((color: (primary: $streaming-calculator-primary,
+      accent: $streaming-calculator-accent,
+      warn: $streaming-calculator-warn,
+    )));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($streaming-calculator-theme);
+
+// Classes to apply theme color
+.background-primary {
+  background-color: mat-color($streaming-calculator-primary);
+}
+
+.background-accent {
+  background-color: mat-color($streaming-calculator-accent);
+}
+
+.stroke-primary {
+  stroke: mat-color($streaming-calculator-primary);
+}
+
+.stroke-accent {
+  stroke: mat-color($streaming-calculator-accent);
+}
+
+.fill-primary {
+  fill: mat-color($streaming-calculator-primary);
+}
+
+.fill-accent {
+  fill: mat-color($streaming-calculator-accent);
+}
+
+.fill-text-color {
+  fill: $dark-primary-text;
+}
+
+// Dark theme
+.dark-theme {
+  // color: $light-primary-text;
+  $dark-primary: mat-palette($mat-blue-grey);
+  $dark-accent: mat-palette($mat-blue, 200, 50, 400);
+  $dark-warn: mat-palette($mat-red);
+  $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+  @include angular-material-theme($dark-theme);
+
+  // Classes to apply theme color
+  .background-primary {
+    background-color: mat-color($streaming-calculator-primary);
+  }
+
+  .background-accent {
+    background-color: mat-color($streaming-calculator-accent);
+  }
+
+  .stroke-primary {
+    stroke: mat-color($streaming-calculator-primary);
+  }
+
+  .stroke-accent {
+    stroke: mat-color($streaming-calculator-accent);
+  }
+
+  .fill-primary {
+    fill: mat-color($streaming-calculator-primary);
+  }
+
+  .fill-accent {
+    fill: mat-color($streaming-calculator-accent);
+  }
+
+  .fill-text-color {
+    fill: $light-primary-text;
+  }
+}
+
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

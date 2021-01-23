@@ -1,0 +1,90 @@
+.mat-app-background {
+  min-height: 100vh;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header {
+  margin: 24px;
+}
+
+form {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 24px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.figure-container {
+  display: flex;
+  justify-content: center;
+
+  >* {
+    height: 50vh;
+
+    @media (max-width: 768px) {
+      height: initial;
+    }
+  }
+}
+
+.donut-container {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  .figure-caption {
+    margin: 24px;
+
+    .caption-list {
+      list-style: none;
+      white-space: nowrap;
+      padding-left: 0;
+
+      .circle {
+        display: inline-block;
+        vertical-align: middle;
+        width: 16px;
+        height: 16px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.chart-text {
+  -moz-transform: translateY(0.25em);
+  -ms-transform: translateY(0.25em);
+  -webkit-transform: translateY(0.25em);
+  transform: translateY(0.25em);
+}
+
+.chart-number {
+  font-size: 0.5em;
+  line-height: 1;
+  text-anchor: middle;
+  -moz-transform: translateY(-0.25em);
+  -ms-transform: translateY(-0.25em);
+  -webkit-transform: translateY(-0.25em);
+  transform: translateY(-0.25em);
+}
+
+.chart-label {
+  font-size: 0.12em;
+  text-anchor: middle;
+  -moz-transform: translateY(0.7em);
+  -ms-transform: translateY(0.7em);
+  -webkit-transform: translateY(0.7em);
+  transform: translateY(0.7em);
+}
